@@ -1,0 +1,20 @@
+During the development of this assignment I learned a lot. I wanted to use 
+TypeScript as it's been gaining a lot of popularity and want to gain experience
+with it. Learning the typing system took more time than I expected but in the
+end it was worth it. One thing that was difficult was the chart on the Dashboard
+page. To display the revenue correctly it has to go through a calculation
+function to get the correct amount. I also learned a lot of the purpose of 
+proper planning. Having a good plan and layout for the application makes a lot 
+of the development easier later into the process. I already had a good idea of
+what I wanted to do and only had to figure out the best way to do it rather than
+planning as it goes.
+
+Some future improvements would be adding a Stripe onboarding process. Basically,
+if the partner hasn't set up Stripe there would be a banner that lets them know.
+From there they could click on a link that would take them to Stripe to set
+everything up. As far as other features it would depend on what the partners
+want. This is an initial start that then we'll get some feedback from partners
+and see what other things they want.
+
+Overall this was a great project that gave me a lot of experience. I was glad
+I was able to do it because I feel like it can build my resume a lot.

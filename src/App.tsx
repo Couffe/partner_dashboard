@@ -2,7 +2,7 @@ import Navbar from "./components/Nav/Navbar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import AppSidebar from "./components/Nav/Sidebar/AppSidebar";
 import Dashboard from "./components/Dashboard/Dashboard";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import { Toaster } from "@/components/ui/sonner";
 import Payouts from "./components/Payouts/Payouts";
@@ -18,6 +18,10 @@ function App() {
             <Navbar />
             <main className="p-4">
               <Routes>
+                <Route
+                  path="/"
+                  element={<Navigate to="/dashboard" replace />}
+                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/payouts" element={<Payouts />} />
