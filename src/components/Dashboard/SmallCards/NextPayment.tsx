@@ -21,16 +21,26 @@ async function getEstimatedPayout(): Promise<EstimatedPayout> {
 
   const recentPayments = TRANSACTIONS.filter((transaction) => {
     const tDate = new Date(transaction.createdAtUtc);
-    return tDate >= lastPayment;
+    if (lastPayment) {
+      return tDate >= lastPayment;
+    }
   }).reduce((sum, transaction) => {
     return sum + transaction.cost;
   }, 0);
 
-  return {
-    minDate: lastPayment,
-    maxDate: now,
-    total: recentPayments,
-  };
+  if (lastPayment) {
+    return {
+      minDate: lastPayment,
+      maxDate: now,
+      total: recentPayments,
+    };
+  } else {
+    return {
+      minDate: new Date(),
+      maxDate: now,
+      total: recentPayments,
+    };
+  }
 }
 
 const NextPayment = ({ className }: NextPaymentProps) => {

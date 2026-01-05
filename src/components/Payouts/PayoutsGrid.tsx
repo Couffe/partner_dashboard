@@ -8,7 +8,6 @@ import PayoutDetails from "./PayoutDetails/PayoutDetails";
 const PayoutsGrid = () => {
   const [payouts, setPayouts] = useState<PartnerPayment[]>([]);
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
-  const [isLoading, setIsLoading] = useState(false);
 
   const selectedPayoutId = Number(Object.keys(rowSelection)[0]);
   const selectedPayout = payouts.find(
@@ -18,15 +17,11 @@ const PayoutsGrid = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        setIsLoading(true);
-
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
         setPayouts(PAYMENTS);
       } catch (err) {
         console.error("An error occurred fetching payments", err);
-      } finally {
-        setIsLoading(false);
       }
     };
 
